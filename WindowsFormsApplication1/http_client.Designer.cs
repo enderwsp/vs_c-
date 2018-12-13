@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApplication1
+﻿using System.Text;
+
+namespace WindowsFormsApplication1
 {
     partial class http_client
     {
@@ -98,9 +100,7 @@
             // 
             this.dataType_select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dataType_select.FormattingEnabled = true;
-            this.dataType_select.Items.AddRange(new object[] {
-            "jsonData",
-            "params&"});
+            this.dataType_select.Items.AddRange(Constant.httpdataType);
             this.dataType_select.Location = new System.Drawing.Point(140, 195);
             this.dataType_select.Name = "dataType_select";
             this.dataType_select.Size = new System.Drawing.Size(121, 20);
@@ -164,6 +164,7 @@
             this.console_out.Multiline = true;
             this.console_out.Name = "console_out";
             this.console_out.ReadOnly = true;
+            this.console_out.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.console_out.Size = new System.Drawing.Size(663, 173);
             this.console_out.TabIndex = 11;
             this.console_out.Tag = "console_out";
@@ -202,11 +203,8 @@
             // selected_encode
             // 
             this.selected_encode.FormattingEnabled = true;
-            this.selected_encode.Items.AddRange(new object[] {
-            "gb2312",
-            "gbk",
-            "iso 8859-1",
-            "utf8"});
+            //this.selected_encode.Items.AddRange(similiar.encodingType);
+            this.selected_encode.Items.AddRange(Constant.encodingType);
             this.selected_encode.Location = new System.Drawing.Point(140, 239);
             this.selected_encode.Name = "selected_encode";
             this.selected_encode.Size = new System.Drawing.Size(121, 20);

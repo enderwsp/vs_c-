@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
+    
     public partial class similiar : Form
     {
-        public static String[] encodingType = new String[] {
-            "utf8", "gbk", "gb2312",
-            "iso 8859-1"};
+        
+
         public similiar()
         {
             InitializeComponent();
@@ -40,6 +41,23 @@ namespace WindowsFormsApplication1
         private void similiar_Load(object sender, EventArgs e)
         {
 
+        }
+        
+    }
+    public class CustomComparer : System.Collections.IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            string s1 = (string)x;
+            string s2 = (string)y;
+            if (s1.Length > s2.Length) return 1;
+            if (s1.Length < s2.Length) return -1;
+            for (int i = 0; i < s1.Length; i++)
+            {
+                if (s1[i] > s2[i]) return 1;
+                if (s1[i] < s2[i]) return -1;
+            }
+            return 0;
         }
     }
 }

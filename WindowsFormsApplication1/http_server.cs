@@ -8,5 +8,19 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        private void http_server_portVal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Util.IsCharCanInput("0123456789\b".ToCharArray(), e.KeyChar) == false) {
+                e.Handled = true;
+            }     
+    
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            TimingMessageBox messageBox = new TimingMessageBox("aaaaaaa", 3);
+            messageBox.ShowDialog();
+        }
     }
 }

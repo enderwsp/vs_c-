@@ -8,9 +8,7 @@ namespace WindowsFormsApplication1
 {
     public partial class http_client : Form
     {
-        public static String[] httpdataType = new String[] {
-            "jsonData",
-            "params&"};
+        
         public http_client()
         {
             InitializeComponent();
@@ -54,7 +52,7 @@ namespace WindowsFormsApplication1
             String destUrl = this.url_preview.Text;
             String encodeSelected = this.selected_encode.Text;
             String contentType = "";
-            if (httpdataType[0].Equals(this.dataType_select.Text))
+            if (similiar.httpdataType[0].Equals(this.dataType_select.Text))
             {
                 console_out_AppendText("httpdataType_0:" + this.dataType_select.Text);
 
@@ -66,6 +64,7 @@ namespace WindowsFormsApplication1
             }
             String charset = "charset=" + encodeSelected;
             console_out_AppendText("http——POST ready for datas:");
+            
             Encoding myEncoding = Encoding.GetEncoding(encodeSelected);
             string param = HttpUtility.UrlEncode(this.data_content.Text, myEncoding);
             byte[] postBytes = Encoding.ASCII.GetBytes(param);

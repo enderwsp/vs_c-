@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant.cs" />
     <Compile Include="http_client.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,8 +78,18 @@
     <Compile Include="tcp_server.Designer.cs">
       <DependentUpon>tcp_server.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimingMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimingMessageBox.Designer.cs">
+      <DependentUpon>TimingMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
     <EmbeddedResource Include="http_client.resx">
       <DependentUpon>http_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="http_server.resx">
+      <DependentUpon>http_server.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
@@ -92,6 +103,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="tcp_client.resx">
+      <DependentUpon>tcp_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tcp_server.resx">
+      <DependentUpon>tcp_server.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimingMessageBox.resx">
+      <DependentUpon>TimingMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
