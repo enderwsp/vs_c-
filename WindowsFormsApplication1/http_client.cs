@@ -44,7 +44,7 @@ namespace WindowsFormsApplication1
         {
             if (!String.IsNullOrEmpty(add))
             {
-                this.console_out.AppendText("\r\n" + add);
+                this.console_out.AppendText("\r\n" + DateTime.Now + " _ " + add);
             }
         }
         private void sendbt_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
             String destUrl = this.url_preview.Text;
             String encodeSelected = this.selected_encode.Text;
             String contentType = "";
-            if (similiar.httpdataType[0].Equals(this.dataType_select.Text))
+            if (Constant.httpdataType[0].Equals(this.dataType_select.Text))
             {
                 console_out_AppendText("httpdataType_0:" + this.dataType_select.Text);
 

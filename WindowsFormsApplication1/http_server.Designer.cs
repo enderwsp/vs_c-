@@ -33,8 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.http_local_IP = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.http_server_area = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.request_URL_VAL = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -90,24 +88,6 @@
             this.button1.Text = "startServer";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // http_server_area
-            // 
-            this.http_server_area.Location = new System.Drawing.Point(312, 19);
-            this.http_server_area.MaxLength = 10;
-            this.http_server_area.Name = "http_server_area";
-            this.http_server_area.Size = new System.Drawing.Size(75, 21);
-            this.http_server_area.TabIndex = 6;
-            this.http_server_area.Text = "test";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(198, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "http_server_area";
             // 
             // label4
             // 
@@ -177,8 +157,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.request_URL_VAL);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.http_server_area);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.http_local_IP);
             this.Controls.Add(this.label2);
@@ -186,6 +164,7 @@
             this.Controls.Add(this.label1);
             this.Name = "http_server";
             this.Text = "http_server";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.http_server_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,8 +177,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox http_local_IP;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox http_server_area;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox request_URL_VAL;
         private System.Windows.Forms.Label label5;
