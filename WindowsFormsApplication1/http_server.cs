@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
             }
             else {
                 
-                httpServer = new MyHttpServer(Convert.ToInt16(this.http_server_portVal.Text));
+                httpServer = new MyHttpServer(Convert.ToInt16(this.http_server_portVal.Text), this.console_log);
                 
                 thread = new Thread(new ThreadStart(httpServer.listen));
                 thread.Start();

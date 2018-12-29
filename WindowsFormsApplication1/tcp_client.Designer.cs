@@ -39,6 +39,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tcp_target_encode_select = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.data_len_SET_VAL = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.send_data_len_VAL = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -117,6 +121,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "send_request";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -130,17 +135,200 @@
             // tcp_target_encode_select
             // 
             this.tcp_target_encode_select.FormattingEnabled = true;
-            this.tcp_target_encode_select.Items.AddRange(Constant.encodingType);
+            this.tcp_target_encode_select.Items.AddRange(new object[] {
+            "big5",
+            "Johab",
+            "cp866",
+            "cp875",
+            "utf-7",
+            "utf-8",
+            "x-IA5",
+            "EUC-CN",
+            "EUC-JP",
+            "IBM037",
+            "IBM273",
+            "IBM277",
+            "IBM278",
+            "IBM280",
+            "IBM284",
+            "IBM285",
+            "IBM290",
+            "IBM297",
+            "IBM420",
+            "IBM423",
+            "IBM424",
+            "IBM437",
+            "IBM500",
+            "IBM855",
+            "IBM860",
+            "IBM863",
+            "IBM864",
+            "IBM865",
+            "IBM870",
+            "IBM871",
+            "IBM880",
+            "IBM905",
+            "cp1025",
+            "euc-jp",
+            "euc-kr",
+            "gb2312",
+            "ibm737",
+            "ibm775",
+            "ibm850",
+            "ibm852",
+            "ibm857",
+            "ibm861",
+            "ibm869",
+            "koi8-r",
+            "koi8-u",
+            "utf-16",
+            "utf-32",
+            "DOS-720",
+            "DOS-862",
+            "GB18030",
+            "IBM1026",
+            "ASMO-708",
+            "IBM-Thai",
+            "IBM00858",
+            "IBM00924",
+            "IBM01047",
+            "IBM01140",
+            "IBM01141",
+            "IBM01142",
+            "IBM01143",
+            "IBM01144",
+            "IBM01145",
+            "IBM01146",
+            "IBM01147",
+            "IBM01148",
+            "IBM01149",
+            "us-ascii",
+            "utf-16BE",
+            "utf-32BE",
+            "x-Europa",
+            "x-mac-ce",
+            "macintosh",
+            "shift_jis",
+            "x-cp20001",
+            "x-cp20003",
+            "x-cp20004",
+            "x-cp20005",
+            "x-cp20261",
+            "x-cp20269",
+            "x-cp20936",
+            "x-cp20949",
+            "x-cp50227",
+            "hz-gb-2312",
+            "iso-8859-1",
+            "iso-8859-2",
+            "iso-8859-3",
+            "iso-8859-4",
+            "iso-8859-5",
+            "iso-8859-6",
+            "iso-8859-7",
+            "iso-8859-8",
+            "iso-8859-9",
+            "x-iscii-as",
+            "x-iscii-be",
+            "x-iscii-de",
+            "x-iscii-gu",
+            "x-iscii-ka",
+            "x-iscii-ma",
+            "x-iscii-or",
+            "x-iscii-pa",
+            "x-iscii-ta",
+            "x-iscii-te",
+            "x-mac-thai",
+            "csISO2022JP",
+            "iso-2022-jp",
+            "iso-2022-jp",
+            "iso-2022-kr",
+            "iso-8859-13",
+            "iso-8859-15",
+            "windows-874",
+            "x-mac-greek",
+            "Windows-1252",
+            "iso-8859-8-i",
+            "windows-1250",
+            "windows-1251",
+            "windows-1253",
+            "windows-1254",
+            "windows-1255",
+            "windows-1256",
+            "windows-1257",
+            "windows-1258",
+            "x-IA5-German",
+            "x-mac-arabic",
+            "x-mac-hebrew",
+            "x-mac-korean",
+            "x-Chinese-CNS",
+            "x-IA5-Swedish",
+            "x-mac-turkish",
+            "ks_c_5601-1987",
+            "x-Chinese-Eten",
+            "x-mac-croatian",
+            "x-mac-cyrillic",
+            "x-mac-japanese",
+            "x-mac-romanian",
+            "x-IA5-Norwegian",
+            "x-mac-icelandic",
+            "x-mac-ukrainian",
+            "x-mac-chinesesimp",
+            "x-mac-chinesetrad",
+            "x-EBCDIC-KoreanExtended"});
             this.tcp_target_encode_select.Location = new System.Drawing.Point(503, 18);
             this.tcp_target_encode_select.Name = "tcp_target_encode_select";
             this.tcp_target_encode_select.Size = new System.Drawing.Size(121, 20);
             this.tcp_target_encode_select.TabIndex = 10;
+            this.tcp_target_encode_select.Text = "utf-8";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(220, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "len_SIZE";
+            // 
+            // data_len_SET_VAL
+            // 
+            this.data_len_SET_VAL.Location = new System.Drawing.Point(298, 46);
+            this.data_len_SET_VAL.MaxLength = 2;
+            this.data_len_SET_VAL.Name = "data_len_SET_VAL";
+            this.data_len_SET_VAL.Size = new System.Drawing.Size(50, 21);
+            this.data_len_SET_VAL.TabIndex = 12;
+            this.data_len_SET_VAL.Text = "6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(379, 55);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 12);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "length_Of_data";
+            // 
+            // send_data_len_VAL
+            // 
+            this.send_data_len_VAL.Location = new System.Drawing.Point(503, 46);
+            this.send_data_len_VAL.MaxLength = 10;
+            this.send_data_len_VAL.Name = "send_data_len_VAL";
+            this.send_data_len_VAL.ReadOnly = true;
+            this.send_data_len_VAL.Size = new System.Drawing.Size(121, 21);
+            this.send_data_len_VAL.TabIndex = 14;
+            this.send_data_len_VAL.Text = "6";
+            this.send_data_len_VAL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tcp_client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 598);
+            this.Controls.Add(this.send_data_len_VAL);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.data_len_SET_VAL);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.tcp_target_encode_select);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
@@ -172,5 +360,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox tcp_target_encode_select;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox data_len_SET_VAL;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox send_data_len_VAL;
     }
 }
