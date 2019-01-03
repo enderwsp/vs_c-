@@ -32,12 +32,16 @@ namespace WindowsFormsApplication1
         }
         public static void tcpOnlySend(TcpClient tcpcz, byte[] contentBytes)
         {
-
-
             NetworkStream stream = tcpcz.GetStream();//创建于服务器连接的数据流
+            try
+            {
+                stream.BeginWrite(contentBytes, 0, contentBytes.Length, new AsyncCallback(SendCallback), stream);//异步发送数据
+            }
+            catch
+            {
+            }
 
 
-            stream.BeginWrite(contentBytes, 0, contentBytes.Length, new AsyncCallback(SendCallback), stream);//异步发送数据
         }
         public static void ConnectCallback(IAsyncResult ar)
 
@@ -65,7 +69,7 @@ namespace WindowsFormsApplication1
 
             }
 
-            catch (Exception ee) { }
+            catch (Exception) { }
         }
         public static void SendCallback(IAsyncResult ar)
 

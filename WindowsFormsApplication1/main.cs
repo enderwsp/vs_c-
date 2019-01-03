@@ -1,48 +1,68 @@
-﻿using System;
-using System.Text;
+﻿using NLog;
+using System;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    
+
     public partial class similiar : Form
     {
-        
 
+        public static Logger logger = LogManager.GetLogger("similiar");
         public similiar()
         {
+            logger.Info("similiar starting");
             InitializeComponent();
         }
 
         private void httpclientToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            logger.Info("http_client starting");
             http_client hc = new http_client();
             hc.Show();
         }
 
         private void tcpclientToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            logger.Info("tcp_client starting");
             tcp_client hc = new tcp_client();
             hc.Show();
         }
 
         private void httpserverToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            logger.Info("http_server starting");
             http_server hc = new http_server();
             hc.Show();
         }
 
         private void tcpserverToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            logger.Info("tcp_server starting");
             tcp_server hc = new tcp_server();
             hc.Show();
         }
 
         private void similiar_Load(object sender, EventArgs e)
         {
-
+            logger.Info("similiar started");
         }
-        
+
+        private void renderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            logger.Info("CodeRender starting");
+            CodeRender hc = new CodeRender();
+            hc.Show();
+        }
+
+        private void decoderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            logger.Info("CodeDer starting");
+            CodeDer hc = new CodeDer();
+            hc.Show();
+        }
     }
     public class CustomComparer : System.Collections.IComparer
     {
@@ -50,12 +70,27 @@ namespace WindowsFormsApplication1
         {
             string s1 = (string)x;
             string s2 = (string)y;
-            if (s1.Length > s2.Length) return 1;
-            if (s1.Length < s2.Length) return -1;
+            if (s1.Length > s2.Length)
+            {
+                return 1;
+            }
+
+            if (s1.Length < s2.Length)
+            {
+                return -1;
+            }
+
             for (int i = 0; i < s1.Length; i++)
             {
-                if (s1[i] > s2[i]) return 1;
-                if (s1[i] < s2[i]) return -1;
+                if (s1[i] > s2[i])
+                {
+                    return 1;
+                }
+
+                if (s1[i] < s2[i])
+                {
+                    return -1;
+                }
             }
             return 0;
         }

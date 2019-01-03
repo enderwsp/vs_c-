@@ -36,6 +36,9 @@
             this.serverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.httpserverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tcpserverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.decoderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +56,8 @@
             // 
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientToolStripMenuItem,
-            this.serverToolStripMenuItem});
+            this.serverToolStripMenuItem,
+            this.coderToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
             this.newToolStripMenuItem.Text = "new";
@@ -64,20 +68,20 @@
             this.httpclientToolStripMenuItem,
             this.tcpclientToolStripMenuItem});
             this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
-            this.clientToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.clientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientToolStripMenuItem.Text = "client";
             // 
             // httpclientToolStripMenuItem
             // 
             this.httpclientToolStripMenuItem.Name = "httpclientToolStripMenuItem";
-            this.httpclientToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.httpclientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.httpclientToolStripMenuItem.Text = "http_client";
             this.httpclientToolStripMenuItem.Click += new System.EventHandler(this.httpclientToolStripMenuItem_Click);
             // 
             // tcpclientToolStripMenuItem
             // 
             this.tcpclientToolStripMenuItem.Name = "tcpclientToolStripMenuItem";
-            this.tcpclientToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.tcpclientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tcpclientToolStripMenuItem.Text = "tcp_client";
             this.tcpclientToolStripMenuItem.Click += new System.EventHandler(this.tcpclientToolStripMenuItem_Click);
             // 
@@ -87,22 +91,45 @@
             this.httpserverToolStripMenuItem,
             this.tcpserverToolStripMenuItem});
             this.serverToolStripMenuItem.Name = "serverToolStripMenuItem";
-            this.serverToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.serverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.serverToolStripMenuItem.Text = "server";
             // 
             // httpserverToolStripMenuItem
             // 
             this.httpserverToolStripMenuItem.Name = "httpserverToolStripMenuItem";
-            this.httpserverToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.httpserverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.httpserverToolStripMenuItem.Text = "http_server";
             this.httpserverToolStripMenuItem.Click += new System.EventHandler(this.httpserverToolStripMenuItem_Click);
             // 
             // tcpserverToolStripMenuItem
             // 
             this.tcpserverToolStripMenuItem.Name = "tcpserverToolStripMenuItem";
-            this.tcpserverToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.tcpserverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tcpserverToolStripMenuItem.Text = "tcp_server";
             this.tcpserverToolStripMenuItem.Click += new System.EventHandler(this.tcpserverToolStripMenuItem_Click);
+            // 
+            // coderToolStripMenuItem
+            // 
+            this.coderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.renderToolStripMenuItem,
+            this.decoderToolStripMenuItem});
+            this.coderToolStripMenuItem.Name = "coderToolStripMenuItem";
+            this.coderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.coderToolStripMenuItem.Text = "coder";
+            // 
+            // renderToolStripMenuItem
+            // 
+            this.renderToolStripMenuItem.Name = "renderToolStripMenuItem";
+            this.renderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renderToolStripMenuItem.Text = "render";
+            this.renderToolStripMenuItem.Click += new System.EventHandler(this.renderToolStripMenuItem_Click);
+            // 
+            // decoderToolStripMenuItem
+            // 
+            this.decoderToolStripMenuItem.Name = "decoderToolStripMenuItem";
+            this.decoderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.decoderToolStripMenuItem.Text = "decoder";
+            this.decoderToolStripMenuItem.Click += new System.EventHandler(this.decoderToolStripMenuItem_Click);
             // 
             // similiar
             // 
@@ -131,6 +158,9 @@
         private System.Windows.Forms.ToolStripMenuItem serverToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem httpserverToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tcpserverToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem coderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem decoderToolStripMenuItem;
     }
 }
 

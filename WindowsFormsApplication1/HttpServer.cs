@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -23,7 +24,7 @@ namespace WindowsFormsApplication1
 
         public void listen()
         {
-            listener = new TcpListener(port);
+            listener = new TcpListener(IPAddress.Any,port);
             listener.Start();
             while (is_active)
             {

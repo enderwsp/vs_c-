@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -13,8 +11,8 @@ namespace WindowsFormsApplication1
         TextBox logbox;
         Boolean started = false;
         TcpListener listener;
-        String Encode;
-        int Port;
+        private String Encode;
+        private int Port;
         public MyTcpServer(String port, TextBox log, String encode)
         {
             Port = Convert.ToInt32(port);
@@ -63,7 +61,7 @@ namespace WindowsFormsApplication1
                         logbox.AppendText("\r\n" + DateTime.Now + " _ " + "ee request: " + ee.Message);
                         //释放数据流中的数据
                     }
-                    catch (Exception ee2)
+                    catch (Exception)
                     {
 
                     }

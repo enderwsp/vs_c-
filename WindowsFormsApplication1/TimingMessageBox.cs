@@ -15,7 +15,9 @@ namespace WindowsFormsApplication1
         private int second;
         // 计数器，用以判断当前窗口弹出后持续的时间
         private int counter;
+       // TimingMessageBox messageBox = new TimingMessageBox("target_IP must be input", 5);
 
+        //messageBox.ShowDialog();
         // 构造函数
         public TimingMessageBox(string message, int second)
         {
