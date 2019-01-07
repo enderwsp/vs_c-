@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
             //白底
             myGraphic.FillRectangle(Brushes.White, middleL, middleT, middleW, middleH);
             myGraphic.DrawImage(logo, middleL, middleT, middleW, middleH);
-
+            GC.Collect();
             //保存成图片
             //bmpimg.Save(@"H:\桌面\截图\generate3.png", ImageFormat.Png);
             return bmpimg;

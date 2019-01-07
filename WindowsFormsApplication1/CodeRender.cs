@@ -1,12 +1,15 @@
-﻿using System;
+﻿using similiar;
+using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
     public partial class CodeRender : Form
     {
+        ImgForm hc = new ImgForm();
         public CodeRender()
         {
             InitializeComponent();
@@ -25,23 +28,23 @@ namespace WindowsFormsApplication1
         }
 
         private void Encoder_Click(object sender, EventArgs e)
-        {
-            pic_show.Image=EncoderDo();
+        { 
+            hc.Show_Img(EncoderDo());
         }
 
         private Bitmap EncoderDo()
         {
             Bitmap result;
-            if (logo_File.Text.Trim() == "")
+            if (openFileForLogo.FileName != "" && openFileForLogo.FileName.IndexOf(".") > 0)
             {
-                Bitmap logoimg = new Bitmap(logo_File.Text);
+                Bitmap logoimg = new Bitmap(Util.ZoomPicture(Image.FromFile(logo_File.Text), Convert.ToInt32(logo_MAX_width.Text), Convert.ToInt32(logo_MAX_height.Text)));
                 result = CodeZx.RenderQR(plain_Text_inputs.Text, Convert.ToInt32(img_width.Text), Convert.ToInt32(img_height.Text), logoimg);
             }
             else
             {
                 result = CodeZx.RenderQR(plain_Text_inputs.Text, Convert.ToInt32(img_width.Text), Convert.ToInt32(img_height.Text));
             }
-             return result;
+            return result;
         }
 
         private void Input_numbers_KeyPress(object sender, KeyPressEventArgs e)
@@ -57,7 +60,13 @@ namespace WindowsFormsApplication1
         }
         private void Save_img_Click(object sender, EventArgs e)
         {
-            EncoderDo().Save(DateTime.Now+"_QRCODE.png");
+            string filepath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\";
+            string name = DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_QRCODE.png";
+            Bitmap encodemap = EncoderDo();
+            hc.Show_Img(encodemap);
+            encodemap.Save(filepath + name, ImageFormat.Png);
+            TimingMessageBox messageBox = new TimingMessageBox("qrcode.png file saved to:\r\n" + filepath + "\r\n" + name, 10);
+            messageBox.ShowDialog();
         }
     }
 }

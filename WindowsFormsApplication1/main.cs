@@ -8,47 +8,48 @@ namespace WindowsFormsApplication1
     public partial class similiar : Form
     {
 
-        public static Logger logger = LogManager.GetLogger("similiar");
+        public static Logger logger;
         public similiar()
         {
+            logger = LogManager.GetLogger(GetType().Name);
             logger.Info("similiar starting");
             InitializeComponent();
         }
 
-        private void httpclientToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HttpclientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logger.Info("http_client starting");
             http_client hc = new http_client();
             hc.Show();
         }
 
-        private void tcpclientToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TcpclientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logger.Info("tcp_client starting");
             tcp_client hc = new tcp_client();
             hc.Show();
         }
 
-        private void httpserverToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HttpserverToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logger.Info("http_server starting");
             http_server hc = new http_server();
             hc.Show();
         }
 
-        private void tcpserverToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TcpserverToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logger.Info("tcp_server starting");
             tcp_server hc = new tcp_server();
             hc.Show();
         }
 
-        private void similiar_Load(object sender, EventArgs e)
+        private void Similiar_Load(object sender, EventArgs e)
         {
             logger.Info("similiar started");
         }
 
-        private void renderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RenderToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             logger.Info("CodeRender starting");
@@ -56,13 +57,14 @@ namespace WindowsFormsApplication1
             hc.Show();
         }
 
-        private void decoderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DecoderToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             logger.Info("CodeDer starting");
             CodeDer hc = new CodeDer();
             hc.Show();
         }
+
     }
     public class CustomComparer : System.Collections.IComparer
     {

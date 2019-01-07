@@ -76,14 +76,14 @@
             this.httpclientToolStripMenuItem.Name = "httpclientToolStripMenuItem";
             this.httpclientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.httpclientToolStripMenuItem.Text = "http_client";
-            this.httpclientToolStripMenuItem.Click += new System.EventHandler(this.httpclientToolStripMenuItem_Click);
+            this.httpclientToolStripMenuItem.Click += new System.EventHandler(this.HttpclientToolStripMenuItem_Click);
             // 
             // tcpclientToolStripMenuItem
             // 
             this.tcpclientToolStripMenuItem.Name = "tcpclientToolStripMenuItem";
             this.tcpclientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tcpclientToolStripMenuItem.Text = "tcp_client";
-            this.tcpclientToolStripMenuItem.Click += new System.EventHandler(this.tcpclientToolStripMenuItem_Click);
+            this.tcpclientToolStripMenuItem.Click += new System.EventHandler(this.TcpclientToolStripMenuItem_Click);
             // 
             // serverToolStripMenuItem
             // 
@@ -99,14 +99,14 @@
             this.httpserverToolStripMenuItem.Name = "httpserverToolStripMenuItem";
             this.httpserverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.httpserverToolStripMenuItem.Text = "http_server";
-            this.httpserverToolStripMenuItem.Click += new System.EventHandler(this.httpserverToolStripMenuItem_Click);
+            this.httpserverToolStripMenuItem.Click += new System.EventHandler(this.HttpserverToolStripMenuItem_Click);
             // 
             // tcpserverToolStripMenuItem
             // 
             this.tcpserverToolStripMenuItem.Name = "tcpserverToolStripMenuItem";
             this.tcpserverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tcpserverToolStripMenuItem.Text = "tcp_server";
-            this.tcpserverToolStripMenuItem.Click += new System.EventHandler(this.tcpserverToolStripMenuItem_Click);
+            this.tcpserverToolStripMenuItem.Click += new System.EventHandler(this.TcpserverToolStripMenuItem_Click);
             // 
             // coderToolStripMenuItem
             // 
@@ -122,14 +122,14 @@
             this.renderToolStripMenuItem.Name = "renderToolStripMenuItem";
             this.renderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.renderToolStripMenuItem.Text = "render";
-            this.renderToolStripMenuItem.Click += new System.EventHandler(this.renderToolStripMenuItem_Click);
+            this.renderToolStripMenuItem.Click += new System.EventHandler(this.RenderToolStripMenuItem_Click);
             // 
             // decoderToolStripMenuItem
             // 
             this.decoderToolStripMenuItem.Name = "decoderToolStripMenuItem";
             this.decoderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.decoderToolStripMenuItem.Text = "decoder";
-            this.decoderToolStripMenuItem.Click += new System.EventHandler(this.decoderToolStripMenuItem_Click);
+            this.decoderToolStripMenuItem.Click += new System.EventHandler(this.DecoderToolStripMenuItem_Click);
             // 
             // similiar
             // 
@@ -140,7 +140,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "similiar";
             this.Text = "similiar";
-            this.Load += new System.EventHandler(this.similiar_Load);
+            this.Load += new System.EventHandler(this.Similiar_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
