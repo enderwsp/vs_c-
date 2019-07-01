@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
     partial class http_client
     {

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace SimiliarTool
 {
     partial class tcp_server
     {

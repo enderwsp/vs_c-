@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
 
     public partial class similiar : Form

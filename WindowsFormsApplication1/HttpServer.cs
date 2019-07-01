@@ -8,7 +8,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
     public abstract class HttpServer
     {

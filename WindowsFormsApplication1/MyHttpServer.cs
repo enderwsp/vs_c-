@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
     public class MyHttpServer : HttpServer
     {

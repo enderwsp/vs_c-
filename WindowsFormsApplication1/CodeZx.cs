@@ -11,7 +11,7 @@ using ZXing.Presentation;
 using ZXing.QrCode;
 using ZXing.QrCode.Internal;
 
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
     public class CodeZx
     {

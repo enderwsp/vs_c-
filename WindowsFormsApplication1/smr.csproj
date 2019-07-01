@@ -49,6 +49,9 @@
     <LangVersion>7.1</LangVersion>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>debug.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.5.11\lib\net40-client\NLog.dll</HintPath>
@@ -139,6 +142,8 @@
       <DependentUpon>TimingMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
+    <Content Include="debug.ico" />
+    <Content Include="调试.png" />
     <EmbeddedResource Include="CodeDer.resx">
       <DependentUpon>CodeDer.cs</DependentUpon>
     </EmbeddedResource>

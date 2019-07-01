@@ -4,7 +4,7 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Windows.Forms;
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
     public partial class http_client : Form
     {

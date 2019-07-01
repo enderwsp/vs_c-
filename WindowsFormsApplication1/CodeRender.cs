@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
     public partial class CodeRender : Form
     {

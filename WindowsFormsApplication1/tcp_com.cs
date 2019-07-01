@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
 
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
     public static class tcp_com
     {

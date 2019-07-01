@@ -3,7 +3,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
     public partial class tcp_client : Form
     {

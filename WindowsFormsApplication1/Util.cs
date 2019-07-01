@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Text;
 
-namespace WindowsFormsApplication1
+namespace SimiliarTool
 {
     public static class Util
     {
