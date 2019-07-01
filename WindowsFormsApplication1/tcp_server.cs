@@ -15,11 +15,11 @@ namespace SimiliarTool
         {
             InitializeComponent();
         }
-        private void console(String msg)
+        private void ConsoleOut(String msg)
         {
-            this.ConsoleLogOUT.AppendText("\r\n" + DateTime.Now + " _ " + msg);
+            this.ConsoleOutLogOUT.AppendText("\r\n" + DateTime.Now + " _ " + msg);
         }
-        private void Button1_Click(object sender, System.EventArgs e)
+        private void Button1Click(object sender, System.EventArgs e)
         {
             if (thread != null && thread.ThreadState.Equals(ThreadState.Running) && thread.IsAlive)
             {
@@ -28,20 +28,20 @@ namespace SimiliarTool
                 {
                     if (tcpServer != null)
                     {
-                        tcpServer.stopServer();
+                        tcpServer.StopServer();
                     }
                     thread.Abort();
 
                 }
                 catch (Exception ex)
                 {
-                    console(ex.Message);
+                    ConsoleOut(ex.Message);
                 }
                 finally
                 {
                     if (tcpServer != null)
                     {
-                        tcpServer.stopServer();
+                        tcpServer.StopServer();
                     }
                     thread = null;
 
@@ -50,8 +50,8 @@ namespace SimiliarTool
                 this.button1.Text = "StartServer";
             }
             else {
-                tcpServer = new MyTcpServer(this.tcp_server_PORT_VAL.Text, this.ConsoleLogOUT, this.encode_select.Text);
-                thread = new Thread(new ThreadStart(tcpServer.startServer));
+                tcpServer = new MyTcpServer(this.tcp_server_PORT_VAL.Text, this.ConsoleOutLogOUT, this.encode_select.Text);
+                thread = new Thread(new ThreadStart(tcpServer.StartServer));
                 thread.Start();
                 this.tcp_server_PORT_VAL.ReadOnly = true;
                 this.button1.Text = "Stop_Server";

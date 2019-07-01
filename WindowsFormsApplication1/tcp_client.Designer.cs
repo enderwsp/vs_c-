@@ -1,6 +1,6 @@
 ﻿namespace SimiliarTool
 {
-    partial class tcp_client
+    partial class TcpClientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -60,7 +60,7 @@
             this.target_IP_VAL.Name = "target_IP_VAL";
             this.target_IP_VAL.Size = new System.Drawing.Size(100, 21);
             this.target_IP_VAL.TabIndex = 1;
-            this.target_IP_VAL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.target_IP_VAL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1KeyPress);
             // 
             // label2
             // 
@@ -77,7 +77,7 @@
             this.target_PORT_VAL.Name = "target_PORT_VAL";
             this.target_PORT_VAL.Size = new System.Drawing.Size(50, 21);
             this.target_PORT_VAL.TabIndex = 3;
-            this.target_PORT_VAL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.target_PORT_VAL_KeyPress);
+            this.target_PORT_VAL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TargetPortValKeyPress);
             // 
             // send_DATA_CTX
             // 
@@ -103,7 +103,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 12);
             this.label4.TabIndex = 6;
-            this.label4.Text = "console_log";
+            this.label4.Text = "ConsoleOut_log";
             // 
             // textBox3
             // 
@@ -121,7 +121,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "send_request";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1Click);
             // 
             // label5
             // 
@@ -320,7 +320,7 @@
             this.send_data_len_VAL.Text = "6";
             this.send_data_len_VAL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tcp_client
+            // TcpClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -340,8 +340,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.target_IP_VAL);
             this.Controls.Add(this.label1);
-            this.Name = "tcp_client";
-            this.Text = "tcp_client";
+            this.Name = "TcpClient";
+            this.Text = "TcpClient";
             this.ResumeLayout(false);
             this.PerformLayout();
 

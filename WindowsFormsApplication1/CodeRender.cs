@@ -1,4 +1,4 @@
-﻿using similiar;
+﻿using Similiar;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -9,7 +9,7 @@ namespace SimiliarTool
 {
     public partial class CodeRender : Form
     {
-        ImgForm hc = new ImgForm();
+        readonly ImgForm hc = new ImgForm();
         public CodeRender()
         {
             InitializeComponent();

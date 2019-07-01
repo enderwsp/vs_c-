@@ -15,14 +15,14 @@ namespace SimiliarTool
 
         protected int port;
         TcpListener listener;
-        bool is_active = true;
+        readonly bool is_active = true;
         Thread thread;
         public HttpServer(int port)
         {
             this.port = port;
         }
 
-        public void listen()
+        public void Listen()
         {
             listener = new TcpListener(IPAddress.Any,port);
             listener.Start();
@@ -30,12 +30,12 @@ namespace SimiliarTool
             {
                 TcpClient s = listener.AcceptTcpClient();
                 HttpProcessor processor = new HttpProcessor(s, this);
-                thread = new Thread(new ThreadStart(processor.process));
+                thread = new Thread(new ThreadStart(processor.Process));
                 thread.Start();
                 Thread.Sleep(1);
             }
         }
-        public void stop()
+        public void Stop()
         {
             if (is_active)
             {
@@ -46,8 +46,8 @@ namespace SimiliarTool
                 thread = null;
             }
         }
-        public abstract void handleGETRequest(HttpProcessor p);
-        public abstract void handlePOSTRequest(HttpProcessor p, StreamReader inputData);
+        public abstract void HandleGETRequest(HttpProcessor p);
+        public abstract void HandlePOSTRequest(HttpProcessor p, StreamReader inputData);
     }
     public class HttpProcessor
     {
@@ -63,7 +63,7 @@ namespace SimiliarTool
         public Hashtable httpHeaders = new Hashtable();
 
 
-        private static int MAX_POST_SIZE = 10 * 1024 * 1024; // 10MB
+        private static readonly int MAX_POST_SIZE = 10 * 1024 * 1024; // 10MB
 
         public HttpProcessor(TcpClient s, HttpServer srv)
         {
@@ -72,7 +72,7 @@ namespace SimiliarTool
         }
 
 
-        private string streamReadLine(Stream inputStream)
+        private string StreamReadLine(Stream inputStream)
         {
             int next_char;
             string data = "";
@@ -86,7 +86,7 @@ namespace SimiliarTool
             }
             return data;
         }
-        public void process()
+        public void Process()
         {
             // we can't use a StreamReader for input, because it buffers up extra data on us inside it's
             // "processed" view of the world, and we want the data raw after the headers
@@ -96,21 +96,21 @@ namespace SimiliarTool
             outputStream = new StreamWriter(new BufferedStream(socket.GetStream()));
             try
             {
-                parseRequest();
-                readHeaders();
+                ParseRequest();
+                ReadHeaders();
                 if (http_method.Equals("GET"))
                 {
-                    handleGETRequest();
+                    HandleGETRequest();
                 }
                 else if (http_method.Equals("POST"))
                 {
-                    handlePOSTRequest();
+                    HandlePOSTRequest();
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("Exception: " + e.ToString());
-                writeFailure();
+                WriteFailure();
             }
             outputStream.Flush();
             // bs.Flush(); // flush any remaining output
@@ -118,9 +118,9 @@ namespace SimiliarTool
             socket.Close();
         }
 
-        public void parseRequest()
+        public void ParseRequest()
         {
-            String request = streamReadLine(inputStream);
+            String request = StreamReadLine(inputStream);
             string[] tokens = request.Split(' ');
             if (tokens.Length != 3)
             {
@@ -133,11 +133,11 @@ namespace SimiliarTool
             Console.WriteLine("starting: " + request);
         }
 
-        public void readHeaders()
+        public void ReadHeaders()
         {
             Console.WriteLine("readHeaders()");
             String line;
-            while ((line = streamReadLine(inputStream)) != null)
+            while ((line = StreamReadLine(inputStream)) != null)
             {
                 if (line.Equals(""))
                 {
@@ -163,13 +163,13 @@ namespace SimiliarTool
             }
         }
 
-        public void handleGETRequest()
+        public void HandleGETRequest()
         {
-            srv.handleGETRequest(this);
+            srv.HandleGETRequest(this);
         }
 
         private const int BUF_SIZE = 4096;
-        public void handlePOSTRequest()
+        public void HandlePOSTRequest()
         {
             // this post data processing just reads everything into a memory stream.
             // this is fine for smallish things, but for large stuff we should really
@@ -214,11 +214,11 @@ namespace SimiliarTool
                 ms.Seek(0, SeekOrigin.Begin);
             }
             Console.WriteLine("get post data end");
-            srv.handlePOSTRequest(this, new StreamReader(ms));
+            srv.HandlePOSTRequest(this, new StreamReader(ms));
 
         }
 
-        public void writeSuccess()
+        public void WriteSuccess()
         {
             outputStream.WriteLine("HTTP/1.0 200 OK");
             outputStream.WriteLine("Content-Type: text/html");
@@ -226,7 +226,7 @@ namespace SimiliarTool
             outputStream.WriteLine("");
         }
 
-        public void writeFailure()
+        public void WriteFailure()
         {
             outputStream.WriteLine("HTTP/1.0 404 File not found");
             outputStream.WriteLine("Connection: close");

@@ -7,15 +7,15 @@ using System.Text.RegularExpressions;
 
 namespace SimiliarTool
 {
-    public static class tcp_com
+    public static class TcpCommon
     {
         public static int http_server_readBufferSize = 256 * 8 * 1024;
-        public static byte[] tcpReciveAfterSend(TcpClient tcpcz, byte[] contentBytes)
+        public static byte[] TcpReciveAfterSend(TcpClient tcpcz, byte[] contentBytes)
         {
-            tcpOnlySend(tcpcz, contentBytes);
-            return tcpOnlyRecive(tcpcz);
+            TcpOnlySend(tcpcz, contentBytes);
+            return TcpOnlyRecive(tcpcz);
         }
-        public static byte[] tcpOnlyRecive(TcpClient tcpcz)
+        public static byte[] TcpOnlyRecive(TcpClient tcpcz)
         {
             NetworkStream stream = tcpcz.GetStream();//创建于服务器连接的数据流
             //接收字符串
@@ -30,7 +30,7 @@ namespace SimiliarTool
             catch { }
             return result;
         }
-        public static void tcpOnlySend(TcpClient tcpcz, byte[] contentBytes)
+        public static void TcpOnlySend(TcpClient tcpcz, byte[] contentBytes)
         {
             NetworkStream stream = tcpcz.GetStream();//创建于服务器连接的数据流
             try
@@ -85,7 +85,7 @@ namespace SimiliarTool
             // socket.EndSend(ar, out errorCode);
 
         }
-        public static string fulllength(int lenOfData, int lenSet)
+        public static string FullLength(int lenOfData, int lenSet)
         {
             String len = lenOfData + "";
             while (len.Length < lenSet)

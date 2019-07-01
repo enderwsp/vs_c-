@@ -14,17 +14,17 @@ namespace SimiliarTool
             InitializeComponent();
         }
 
-        private void http_server_portVal_KeyPress(object sender, KeyPressEventArgs e)
+        private void HttpServerPortValKeyPress(object sender, KeyPressEventArgs e)
         {
             if (Util.IsCharCanInput("0123456789\b".ToCharArray(), e.KeyChar) == false) {
                 e.Handled = true;
             }     
     
         }
-        private void console(String msg) {
-            this.console_log.AppendText("\r\n" + DateTime.Now +" _ "+ msg);
+        private void ConsoleOut(String msg) {
+            this.ConsoleOut_log.AppendText("\r\n" + DateTime.Now +" _ "+ msg);
         }
-        private void button1_Click(object sender, System.EventArgs e)
+        private void Button1Click(object sender, System.EventArgs e)
         {
             // TimingMessageBox messageBox = new TimingMessageBox("aaaaaaa", 3);
             //messageBox.ShowDialog();
@@ -37,18 +37,18 @@ namespace SimiliarTool
                     thread.Abort();
                     if (httpServer != null)
                     {
-                        httpServer.stop();
+                        httpServer.Stop();
                     }
                 }
                 catch (Exception ex)
                 {
-                    console(ex.Message);
+                    ConsoleOut(ex.Message);
                 }
                 finally {
                     thread = null;
                     if (httpServer != null)
                     {
-                        httpServer.stop();
+                        httpServer.Stop();
                     }
                 }
                 
@@ -58,9 +58,9 @@ namespace SimiliarTool
             }
             else {
                 
-                httpServer = new MyHttpServer(Convert.ToInt16(this.http_server_portVal.Text), this.console_log);
+                httpServer = new MyHttpServer(Convert.ToInt16(this.http_server_portVal.Text), this.ConsoleOut_log);
                 
-                thread = new Thread(new ThreadStart(httpServer.listen));
+                thread = new Thread(new ThreadStart(httpServer.Listen));
                 thread.Start();
                 this.http_server_portVal.ReadOnly = true;
                 this.button1.Text = "STOP_SERVER";
@@ -68,7 +68,7 @@ namespace SimiliarTool
             }
         }
 
-        private void http_server_FormClosing(object sender, FormClosingEventArgs e)
+        private void HttpServerFormClosing(object sender, FormClosingEventArgs e)
         {
             if (serverStarted) {
                 this.button1.PerformClick();

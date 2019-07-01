@@ -2,7 +2,7 @@
 
 namespace SimiliarTool
 {
-    partial class http_client
+    partial class HttpClient
     {
         /// <summary>
         /// Required designer variable.
@@ -41,8 +41,8 @@ namespace SimiliarTool
             this.headers_add = new System.Windows.Forms.TextBox();
             this.datacontentlb = new System.Windows.Forms.Label();
             this.data_content = new System.Windows.Forms.TextBox();
-            this.console_out = new System.Windows.Forms.TextBox();
-            this.consoleout = new System.Windows.Forms.Label();
+            this.ConsoleOut_out = new System.Windows.Forms.TextBox();
+            this.ConsoleOutout = new System.Windows.Forms.Label();
             this.sendbt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.selected_encode = new System.Windows.Forms.ComboBox();
@@ -57,7 +57,7 @@ namespace SimiliarTool
             this.url_com.Size = new System.Drawing.Size(504, 21);
             this.url_com.TabIndex = 0;
             this.url_com.Tag = "dest_url";
-            this.url_com.TextChanged += new System.EventHandler(this.url_com_TextChanged);
+            this.url_com.TextChanged += new System.EventHandler(this.UrlComTextChanged);
             // 
             // dest_url
             // 
@@ -75,7 +75,7 @@ namespace SimiliarTool
             this.vartrs_url.Size = new System.Drawing.Size(247, 21);
             this.vartrs_url.TabIndex = 2;
             this.vartrs_url.Tag = "vartrs_url";
-            this.vartrs_url.TextChanged += new System.EventHandler(this.vartrs_url_TextChanged);
+            this.vartrs_url.TextChanged += new System.EventHandler(this.VartrsUrlTextChanged);
             // 
             // dest_url_preview
             // 
@@ -157,30 +157,30 @@ namespace SimiliarTool
             this.data_content.TabIndex = 10;
             this.data_content.Tag = "data_content";
             // 
-            // console_out
+            // ConsoleOut_out
             // 
-            this.console_out.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.console_out.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.console_out.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.console_out.Location = new System.Drawing.Point(35, 436);
-            this.console_out.Multiline = true;
-            this.console_out.Name = "console_out";
-            this.console_out.ReadOnly = true;
-            this.console_out.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.console_out.Size = new System.Drawing.Size(663, 173);
-            this.console_out.TabIndex = 11;
-            this.console_out.Tag = "console_out";
-            this.console_out.Text = "console_out_here";
+            this.ConsoleOut_out.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.ConsoleOut_out.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ConsoleOut_out.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.ConsoleOut_out.Location = new System.Drawing.Point(35, 436);
+            this.ConsoleOut_out.Multiline = true;
+            this.ConsoleOut_out.Name = "ConsoleOut_out";
+            this.ConsoleOut_out.ReadOnly = true;
+            this.ConsoleOut_out.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.ConsoleOut_out.Size = new System.Drawing.Size(663, 173);
+            this.ConsoleOut_out.TabIndex = 11;
+            this.ConsoleOut_out.Tag = "ConsoleOut_out";
+            this.ConsoleOut_out.Text = "ConsoleOut_out_here";
             // 
-            // consoleout
+            // ConsoleOutout
             // 
-            this.consoleout.AutoSize = true;
-            this.consoleout.Location = new System.Drawing.Point(33, 398);
-            this.consoleout.Name = "consoleout";
-            this.consoleout.Size = new System.Drawing.Size(65, 12);
-            this.consoleout.TabIndex = 12;
-            this.consoleout.Tag = "consoleout";
-            this.consoleout.Text = "consoleout";
+            this.ConsoleOutout.AutoSize = true;
+            this.ConsoleOutout.Location = new System.Drawing.Point(33, 398);
+            this.ConsoleOutout.Name = "ConsoleOutout";
+            this.ConsoleOutout.Size = new System.Drawing.Size(65, 12);
+            this.ConsoleOutout.TabIndex = 12;
+            this.ConsoleOutout.Tag = "ConsoleOutout";
+            this.ConsoleOutout.Text = "ConsoleOutout";
             // 
             // sendbt
             // 
@@ -191,7 +191,7 @@ namespace SimiliarTool
             this.sendbt.Tag = "sendbt";
             this.sendbt.Text = "send_request";
             this.sendbt.UseVisualStyleBackColor = true;
-            this.sendbt.Click += new System.EventHandler(this.sendbt_Click);
+            this.sendbt.Click += new System.EventHandler(this.SendbtClick);
             // 
             // label2
             // 
@@ -381,8 +381,8 @@ namespace SimiliarTool
             this.Controls.Add(this.selected_encode);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sendbt);
-            this.Controls.Add(this.consoleout);
-            this.Controls.Add(this.console_out);
+            this.Controls.Add(this.ConsoleOutout);
+            this.Controls.Add(this.ConsoleOut_out);
             this.Controls.Add(this.data_content);
             this.Controls.Add(this.datacontentlb);
             this.Controls.Add(this.headers_add);
@@ -414,8 +414,8 @@ namespace SimiliarTool
         private System.Windows.Forms.TextBox headers_add;
         private System.Windows.Forms.Label datacontentlb;
         private System.Windows.Forms.TextBox data_content;
-        private System.Windows.Forms.TextBox console_out;
-        private System.Windows.Forms.Label consoleout;
+        private System.Windows.Forms.TextBox ConsoleOut_out;
+        private System.Windows.Forms.Label ConsoleOutout;
         private System.Windows.Forms.Button sendbt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox selected_encode;

@@ -38,7 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Trans_ID_VAL = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.console_log = new System.Windows.Forms.TextBox();
+            this.ConsoleOut_log = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +58,7 @@
             this.http_server_portVal.Size = new System.Drawing.Size(43, 21);
             this.http_server_portVal.TabIndex = 1;
             this.http_server_portVal.Text = "8091";
-            this.http_server_portVal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.http_server_portVal_KeyPress);
+            this.http_server_portVal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HttpServerPortValKeyPress);
             // 
             // label2
             // 
@@ -85,9 +85,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "startServer";
+            this.button1.Text = "StartServer";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1Click);
             // 
             // label4
             // 
@@ -114,7 +114,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 12);
             this.label5.TabIndex = 9;
-            this.label5.Text = "console_log";
+            this.label5.Text = "ConsoleOut_log";
             // 
             // Trans_ID_VAL
             // 
@@ -134,24 +134,24 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "trans_ID";
             // 
-            // console_log
+            // ConsoleOut_log
             // 
-            this.console_log.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.console_log.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.console_log.Location = new System.Drawing.Point(113, 108);
-            this.console_log.Multiline = true;
-            this.console_log.Name = "console_log";
-            this.console_log.ReadOnly = true;
-            this.console_log.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.console_log.Size = new System.Drawing.Size(844, 432);
-            this.console_log.TabIndex = 12;
+            this.ConsoleOut_log.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ConsoleOut_log.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ConsoleOut_log.Location = new System.Drawing.Point(113, 108);
+            this.ConsoleOut_log.Multiline = true;
+            this.ConsoleOut_log.Name = "ConsoleOut_log";
+            this.ConsoleOut_log.ReadOnly = true;
+            this.ConsoleOut_log.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.ConsoleOut_log.Size = new System.Drawing.Size(844, 432);
+            this.ConsoleOut_log.TabIndex = 12;
             // 
             // http_server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 552);
-            this.Controls.Add(this.console_log);
+            this.Controls.Add(this.ConsoleOut_log);
             this.Controls.Add(this.Trans_ID_VAL);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -164,7 +164,7 @@
             this.Controls.Add(this.label1);
             this.Name = "http_server";
             this.Text = "http_server";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.http_server_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HttpServerFormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +182,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Trans_ID_VAL;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox console_log;
+        private System.Windows.Forms.TextBox ConsoleOut_log;
     }
 }

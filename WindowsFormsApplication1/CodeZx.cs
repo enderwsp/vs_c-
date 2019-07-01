@@ -16,19 +16,23 @@ namespace SimiliarTool
     public class CodeZx
     {
         public static  Bitmap RenderQR(string context,int w,int h) {
-            QrCodeEncodingOptions options = new QrCodeEncodingOptions();
-            options.CharacterSet = "UTF-8";
-            options.DisableECI = true; // Extended Channel Interpretation (ECI) 主要用于特殊的字符集。并不是所有的扫描器都支持这种编码。
-            options.ErrorCorrection = ZXing.QrCode.Internal.ErrorCorrectionLevel.H; // 纠错级别
-            options.Width = w;
-            options.Height = h;
-            options.Margin = 1;
+            QrCodeEncodingOptions options = new QrCodeEncodingOptions
+            {
+                CharacterSet = "UTF-8",
+                DisableECI = true, // Extended Channel Interpretation (ECI) 主要用于特殊的字符集。并不是所有的扫描器都支持这种编码。
+                ErrorCorrection = ZXing.QrCode.Internal.ErrorCorrectionLevel.H, // 纠错级别
+                Width = w,
+                Height = h,
+                Margin = 1
+            };
             // options.Hints，更多属性，也可以在这里添加。
 
-            ZXing.BarcodeWriter writer = new ZXing.BarcodeWriter();
-            writer.Format = BarcodeFormat.QR_CODE;
-            writer.Options = options;
-            
+            ZXing.BarcodeWriter writer = new ZXing.BarcodeWriter
+            {
+                Format = BarcodeFormat.QR_CODE,
+                Options = options
+            };
+
             return  writer.Write(context);
         }
         public static Bitmap RenderQR(string context, int w, int h, Bitmap logo)
@@ -36,9 +40,11 @@ namespace SimiliarTool
             //Bitmap logo = new Bitmap(@"H:\桌面\截图\102.jpg");
             //构造二维码写码器
             MultiFormatWriter writer = new MultiFormatWriter();
-            Dictionary<EncodeHintType, object> hint = new Dictionary<EncodeHintType, object>();
-            hint.Add(EncodeHintType.CHARACTER_SET, "UTF-8");
-            hint.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
+            Dictionary<EncodeHintType, object> hint = new Dictionary<EncodeHintType, object>
+            {
+                { EncodeHintType.CHARACTER_SET, "UTF-8" },
+                { EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H }
+            };
 
             //生成二维码 
             BitMatrix bm = writer.encode(context, BarcodeFormat.QR_CODE, w, h, hint);
@@ -76,17 +82,21 @@ namespace SimiliarTool
         }
         public static Bitmap RenderBR(string context, int w, int h)
         {
-            QrCodeEncodingOptions options = new QrCodeEncodingOptions();
-            options.DisableECI = true; // Extended Channel Interpretation (ECI) 主要用于特殊的字符集。并不是所有的扫描器都支持这种编码。
-            options.ErrorCorrection = ZXing.QrCode.Internal.ErrorCorrectionLevel.H; // 纠错级别
-            options.Width = w;
-            options.Height = h;
-            options.Margin = 1;
+            QrCodeEncodingOptions options = new QrCodeEncodingOptions
+            {
+                DisableECI = true, // Extended Channel Interpretation (ECI) 主要用于特殊的字符集。并不是所有的扫描器都支持这种编码。
+                ErrorCorrection = ZXing.QrCode.Internal.ErrorCorrectionLevel.H, // 纠错级别
+                Width = w,
+                Height = h,
+                Margin = 1
+            };
             // options.Hints，更多属性，也可以在这里添加。
 
-            ZXing.BarcodeWriter writer = new ZXing.BarcodeWriter();
-            writer.Format = BarcodeFormat.ITF;
-            writer.Options = options;
+            ZXing.BarcodeWriter writer = new ZXing.BarcodeWriter
+            {
+                Format = BarcodeFormat.ITF,
+                Options = options
+            };
 
             return writer.Write(context);
         }

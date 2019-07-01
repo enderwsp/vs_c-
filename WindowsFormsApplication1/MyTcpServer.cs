@@ -8,18 +8,18 @@ namespace SimiliarTool
 {
     class MyTcpServer
     {
-        TextBox logbox;
+        readonly TextBox logbox;
         Boolean started = false;
         TcpListener listener;
-        private String Encode;
-        private int Port;
+        private readonly String Encode;
+        private readonly int Port;
         public MyTcpServer(String port, TextBox log, String encode)
         {
             Port = Convert.ToInt32(port);
             logbox = log;
             Encode = encode;
         }
-        public void startServer()
+        public void StartServer()
         {
             listener = new TcpListener(IPAddress.Any, Port);//ip为服务器IP地址，port为监听的端口
             
@@ -39,7 +39,7 @@ namespace SimiliarTool
 
                     {
 
-                        recieveData = tcp_com.tcpOnlyRecive(remoteClient);
+                        recieveData = TcpCommon.TcpOnlyRecive(remoteClient);
                     }
 
                     response = set_encode.GetString(recieveData);
@@ -48,7 +48,7 @@ namespace SimiliarTool
 
                     {
 
-                        tcp_com.tcpOnlySend(remoteClient, set_encode.GetBytes(response));//异步为发送的字符数组                   
+                        TcpCommon.TcpOnlySend(remoteClient, set_encode.GetBytes(response));//异步为发送的字符数组                   
 
                     }
                     remoteClient.Close();
@@ -68,7 +68,7 @@ namespace SimiliarTool
                 }
             }
         }
-        public void stopServer()
+        public void StopServer()
         {
             if (started) {
                 started = false;

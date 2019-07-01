@@ -34,7 +34,7 @@
             this.local_IP_VAL = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.ConsoleLogOUT = new System.Windows.Forms.TextBox();
+            this.ConsoleOutLogOUT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.encode_select = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -79,9 +79,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "startSERVER";
+            this.button1.Text = "StartServer";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1Click);
             // 
             // label3
             // 
@@ -90,19 +90,19 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 12);
             this.label3.TabIndex = 5;
-            this.label3.Text = "console_log";
+            this.label3.Text = "ConsoleOut_log";
             // 
-            // ConsoleLogOUT
+            // ConsoleOutLogOUT
             // 
-            this.ConsoleLogOUT.BackColor = System.Drawing.SystemColors.GrayText;
-            this.ConsoleLogOUT.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ConsoleLogOUT.Location = new System.Drawing.Point(36, 93);
-            this.ConsoleLogOUT.Multiline = true;
-            this.ConsoleLogOUT.Name = "ConsoleLogOUT";
-            this.ConsoleLogOUT.ReadOnly = true;
-            this.ConsoleLogOUT.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ConsoleLogOUT.Size = new System.Drawing.Size(858, 433);
-            this.ConsoleLogOUT.TabIndex = 6;
+            this.ConsoleOutLogOUT.BackColor = System.Drawing.SystemColors.GrayText;
+            this.ConsoleOutLogOUT.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ConsoleOutLogOUT.Location = new System.Drawing.Point(36, 93);
+            this.ConsoleOutLogOUT.Multiline = true;
+            this.ConsoleOutLogOUT.Name = "ConsoleOutLogOUT";
+            this.ConsoleOutLogOUT.ReadOnly = true;
+            this.ConsoleOutLogOUT.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.ConsoleOutLogOUT.Size = new System.Drawing.Size(858, 433);
+            this.ConsoleOutLogOUT.TabIndex = 6;
             // 
             // label5
             // 
@@ -270,7 +270,7 @@
             this.ClientSize = new System.Drawing.Size(926, 569);
             this.Controls.Add(this.encode_select);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.ConsoleLogOUT);
+            this.Controls.Add(this.ConsoleOutLogOUT);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.local_IP_VAL);
@@ -292,7 +292,7 @@
         private System.Windows.Forms.TextBox local_IP_VAL;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox ConsoleLogOUT;
+        private System.Windows.Forms.TextBox ConsoleOutLogOUT;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox encode_select;
     }

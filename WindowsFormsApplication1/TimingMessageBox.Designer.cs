@@ -36,7 +36,7 @@
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
             // 
             // button1
             // 
@@ -46,7 +46,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "confirm";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonOK_Click);
+            this.button1.Click += new System.EventHandler(this.ButtonOKClick);
             // 
             // label1
             // 

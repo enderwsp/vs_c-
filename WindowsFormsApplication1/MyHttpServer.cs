@@ -6,16 +6,16 @@ namespace SimiliarTool
 {
     public class MyHttpServer : HttpServer
     {
-        TextBox logbox;
+       readonly TextBox logbox;
         public MyHttpServer(int port, TextBox log)
             : base(port)
         {
             logbox = log;
         }
-        public override void handleGETRequest(HttpProcessor p)
+        public override void HandleGETRequest(HttpProcessor p)
         {
             logbox.AppendText("\r\n" + DateTime.Now + " _ " + "request: " + p.http_url);
-            p.writeSuccess();
+            p.WriteSuccess();
             p.outputStream.WriteLine("<html><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">");
             p.outputStream.WriteLine("<body><h1>test server</h1>");
             p.outputStream.WriteLine("Current Time: " + DateTime.Now.ToString());
@@ -27,7 +27,7 @@ namespace SimiliarTool
             p.outputStream.WriteLine("</form></body></html>");
         }
 
-        public override void handlePOSTRequest(HttpProcessor p, StreamReader inputData)
+        public override void HandlePOSTRequest(HttpProcessor p, StreamReader inputData)
         {
             logbox.AppendText("\r\n" + DateTime.Now + " _ " + "POST request: " + p.http_url);
             string data = inputData.ReadToEnd();

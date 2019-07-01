@@ -5,28 +5,28 @@ using System.Windows.Forms;
 namespace SimiliarTool
 {
 
-    public partial class similiar : Form
+    public partial class Similiar : Form
     {
 
         public static Logger logger;
-        public similiar()
+        public Similiar()
         {
             logger = LogManager.GetLogger(GetType().Name);
-            logger.Info("similiar starting");
+            logger.Info("Similiar starting");
             InitializeComponent();
         }
 
         private void HttpclientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logger.Info("http_client starting");
-            http_client hc = new http_client();
+            HttpClient hc = new HttpClient();
             hc.Show();
         }
 
         private void TcpclientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            logger.Info("tcp_client starting");
-            tcp_client hc = new tcp_client();
+            logger.Info("TcpClient starting");
+            TcpClientForm hc = new TcpClientForm();
             hc.Show();
         }
 
@@ -46,7 +46,7 @@ namespace SimiliarTool
 
         private void Similiar_Load(object sender, EventArgs e)
         {
-            logger.Info("similiar started");
+            logger.Info("Similiar started");
         }
 
         private void RenderToolStripMenuItem_Click(object sender, EventArgs e)

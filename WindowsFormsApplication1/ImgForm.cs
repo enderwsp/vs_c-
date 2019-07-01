@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace similiar
+namespace Similiar
 {
     public partial class ImgForm : Form
     {

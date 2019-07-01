@@ -1,4 +1,4 @@
-﻿namespace similiar
+﻿namespace Similiar
 {
     partial class ImgForm
     {

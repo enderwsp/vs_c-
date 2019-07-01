@@ -15,14 +15,14 @@
         <xs:documentation>Watch config file for changes and reload automatically.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="internalLogToConsole" type="xs:boolean">
+    <xs:attribute name="internalLogToConsoleOut" type="xs:boolean">
       <xs:annotation>
-        <xs:documentation>Print internal NLog messages to the console. Default value is: false</xs:documentation>
+        <xs:documentation>Print internal NLog messages to the Console Default value is: false</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="internalLogToConsoleError" type="xs:boolean">
+    <xs:attribute name="internalLogToConsoleOutError" type="xs:boolean">
       <xs:annotation>
-        <xs:documentation>Print internal NLog messages to the console error output. Default value is: false</xs:documentation>
+        <xs:documentation>Print internal NLog messages to the ConsoleOut error output. Default value is: false</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="internalLogFile" type="xs:string">
@@ -604,7 +604,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="ColoredConsole">
+  <xs:complexType name="ColoredConsoleOut">
     <xs:complexContent>
       <xs:extension base="Target">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -612,12 +612,12 @@
           <xs:element name="layout" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="header" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="footer" minOccurs="0" maxOccurs="1" type="Layout" />
-          <xs:element name="detectConsoleAvailable" minOccurs="0" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="detectConsoleOutAvailable" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="encoding" minOccurs="0" maxOccurs="1" type="xs:string" />
           <xs:element name="errorStream" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="useDefaultRowHighlightingRules" minOccurs="0" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="highlight-row" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.ConsoleRowHighlightingRule" />
-          <xs:element name="highlight-word" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.ConsoleWordHighlightingRule" />
+          <xs:element name="highlight-row" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.ConsoleOutRowHighlightingRule" />
+          <xs:element name="highlight-word" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.ConsoleOutWordHighlightingRule" />
           <xs:element name="optimizeBufferReuse" minOccurs="0" maxOccurs="1" type="xs:boolean" />
         </xs:choice>
         <xs:attribute name="name" type="xs:string">
@@ -640,9 +640,9 @@
             <xs:documentation>Footer.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="detectConsoleAvailable" type="xs:boolean">
+        <xs:attribute name="detectConsoleOutAvailable" type="xs:boolean">
           <xs:annotation>
-            <xs:documentation>Indicates whether to auto-check if the console is available. - Disables console writing if Environment.UserInteractive = False (Windows Service) - Disables console writing if Console Standard Input is not available (Non-Console-App)</xs:documentation>
+            <xs:documentation>Indicates whether to auto-check if the ConsoleOut is available. - Disables ConsoleOut writing if Environment.UserInteractive = False (Windows Service) - Disables ConsoleOut writing if ConsoleOut Standard Input is not available (Non-ConsoleOut-App)</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="encoding" type="xs:string">
@@ -668,7 +668,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="NLog.Targets.ConsoleOutputColor">
+  <xs:simpleType name="NLog.Targets.ConsoleOutOutputColor">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Black" />
       <xs:enumeration value="DarkBlue" />
@@ -689,37 +689,37 @@
       <xs:enumeration value="NoChange" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="NLog.Targets.ConsoleRowHighlightingRule">
+  <xs:complexType name="NLog.Targets.ConsoleOutRowHighlightingRule">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="condition" minOccurs="0" maxOccurs="1" type="Condition" />
-      <xs:element name="backgroundColor" minOccurs="0" maxOccurs="1" type="NLog.Targets.ConsoleOutputColor" />
-      <xs:element name="foregroundColor" minOccurs="0" maxOccurs="1" type="NLog.Targets.ConsoleOutputColor" />
+      <xs:element name="backgroundColor" minOccurs="0" maxOccurs="1" type="NLog.Targets.ConsoleOutOutputColor" />
+      <xs:element name="foregroundColor" minOccurs="0" maxOccurs="1" type="NLog.Targets.ConsoleOutOutputColor" />
     </xs:choice>
     <xs:attribute name="condition" type="Condition">
       <xs:annotation>
         <xs:documentation>Condition that must be met in order to set the specified foreground and background color.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="backgroundColor" type="NLog.Targets.ConsoleOutputColor">
+    <xs:attribute name="backgroundColor" type="NLog.Targets.ConsoleOutOutputColor">
       <xs:annotation>
         <xs:documentation>Background color.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="foregroundColor" type="NLog.Targets.ConsoleOutputColor">
+    <xs:attribute name="foregroundColor" type="NLog.Targets.ConsoleOutOutputColor">
       <xs:annotation>
         <xs:documentation>Foreground color.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="NLog.Targets.ConsoleWordHighlightingRule">
+  <xs:complexType name="NLog.Targets.ConsoleOutWordHighlightingRule">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="compileRegex" minOccurs="0" maxOccurs="1" type="xs:boolean" />
       <xs:element name="ignoreCase" minOccurs="0" maxOccurs="1" type="xs:boolean" />
       <xs:element name="regex" minOccurs="0" maxOccurs="1" type="xs:string" />
       <xs:element name="text" minOccurs="0" maxOccurs="1" type="xs:string" />
       <xs:element name="wholeWords" minOccurs="0" maxOccurs="1" type="xs:boolean" />
-      <xs:element name="backgroundColor" minOccurs="0" maxOccurs="1" type="NLog.Targets.ConsoleOutputColor" />
-      <xs:element name="foregroundColor" minOccurs="0" maxOccurs="1" type="NLog.Targets.ConsoleOutputColor" />
+      <xs:element name="backgroundColor" minOccurs="0" maxOccurs="1" type="NLog.Targets.ConsoleOutOutputColor" />
+      <xs:element name="foregroundColor" minOccurs="0" maxOccurs="1" type="NLog.Targets.ConsoleOutOutputColor" />
     </xs:choice>
     <xs:attribute name="compileRegex" type="xs:boolean">
       <xs:annotation>
@@ -746,18 +746,18 @@
         <xs:documentation>Indicates whether to match whole words only.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="backgroundColor" type="NLog.Targets.ConsoleOutputColor">
+    <xs:attribute name="backgroundColor" type="NLog.Targets.ConsoleOutOutputColor">
       <xs:annotation>
         <xs:documentation>Background color.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="foregroundColor" type="NLog.Targets.ConsoleOutputColor">
+    <xs:attribute name="foregroundColor" type="NLog.Targets.ConsoleOutOutputColor">
       <xs:annotation>
         <xs:documentation>Foreground color.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="Console">
+  <xs:complexType name="ConsoleOut">
     <xs:complexContent>
       <xs:extension base="Target">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -765,7 +765,7 @@
           <xs:element name="layout" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="header" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="footer" minOccurs="0" maxOccurs="1" type="Layout" />
-          <xs:element name="detectConsoleAvailable" minOccurs="0" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="detectConsoleOutAvailable" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="encoding" minOccurs="0" maxOccurs="1" type="xs:string" />
           <xs:element name="error" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="optimizeBufferReuse" minOccurs="0" maxOccurs="1" type="xs:boolean" />
@@ -790,9 +790,9 @@
             <xs:documentation>Footer.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="detectConsoleAvailable" type="xs:boolean">
+        <xs:attribute name="detectConsoleOutAvailable" type="xs:boolean">
           <xs:annotation>
-            <xs:documentation>Indicates whether to auto-check if the console is available - Disables console writing if Environment.UserInteractive = False (Windows Service) - Disables console writing if Console Standard Input is not available (Non-Console-App)</xs:documentation>
+            <xs:documentation>Indicates whether to auto-check if the ConsoleOut is available - Disables ConsoleOut writing if Environment.UserInteractive = False (Windows Service) - Disables ConsoleOut writing if ConsoleOut Standard Input is not available (Non-ConsoleOut-App)</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="encoding" type="xs:string">

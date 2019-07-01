@@ -11,7 +11,7 @@ namespace SimiliarTool
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1Click(object sender, EventArgs e)
         {
             openFileForPic.Filter = "All Image Files|*.bmp;*.ico;*.gif;*.jpeg;*.jpg;*.png;*.tif;*.tiff|" +
             "Windows Bitmap(*.bmp)|*.bmp|" +
@@ -23,7 +23,7 @@ namespace SimiliarTool
             openFileForPic.ShowDialog();
         }
 
-        private void openFileForPic_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        private void OpenFileForPicFileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             file_Path.Text = openFileForPic.FileName;
             Bitmap img = new Bitmap(openFileForPic.FileName);

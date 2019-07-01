@@ -12,7 +12,7 @@ namespace SimiliarTool
     public partial class TimingMessageBox : Form
     {
         // 自动关闭的时间限制，如3为3秒后自动关闭
-        private int second;
+        private readonly int second;
         // 计数器，用以判断当前窗口弹出后持续的时间
         private int counter;
        // TimingMessageBox messageBox = new TimingMessageBox("target_IP must be input", 5);
@@ -36,7 +36,7 @@ namespace SimiliarTool
             this.timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1Tick(object sender, EventArgs e)
         {
             // 如果没有到达指定的时间限制
             if (this.counter <= this.second)
@@ -58,7 +58,7 @@ namespace SimiliarTool
             }
         }
 
-        private void buttonOK_Click(object sender, EventArgs e)
+        private void ButtonOKClick(object sender, EventArgs e)
         {
             // 单击确定按钮，关闭对话框
             this.Close();
